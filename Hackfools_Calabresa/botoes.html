@@ -11,11 +11,11 @@
 <body>
 
 <audio id="FraseRes">
-  <source scr="xaropinho-ratinho-rapaz.mp3" type="audio/mpeg"/>
+  <source src="Educado1.mp3" type="audio/mpeg"/>
 </audio>
 
 <audio id="FraseDis">
-  <source id="SourceDis" scr="Educado1.mp3" type="audio/mpeg"/>
+  <source id="SourceDis" src="Mal_Educado1.mp3" type="audio/mpeg"/>
 </audio>
 
 <audio id="rapaz">
@@ -59,6 +59,7 @@ let fundo = document.getElementById('fundo');
 
 function rapaiz(){
   rapaz.play();
+  console.log(rapaz)
 }
 
 function troca(){
@@ -81,6 +82,7 @@ function tocar(){
 
 
 function playAudioRespect() { 
+  FraseRes.play();
   if(respeito == 0) troca();
   respeito = 1;
   imagens.classList.remove('desaparecer');
@@ -88,7 +90,6 @@ function playAudioRespect() {
   setTimeout(() =>  imagens.classList.add('desaparecer') , 3000);
   setTimeout(() => fundo.classList.remove('desaparecer') , 3000);
   console.log(FraseRes);  
-  FraseRes.play();
 } 
 
 function playAudioDisrespect() { 
