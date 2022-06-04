@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Botões</title>
+  <link rel="stylesheet" href="style.css"> 
+  <style rel="stylesheet"/>
+      body { background-image: url("https://ak.picdn.net/shutterstock/videos/1008692785/thumb/1.jpg%22"); }
+    </style>
+
+</head>
+<body>
+
+<audio id="FraseRes">
+  <source scr="xaropinho-ratinho-rapaz.mp3" type="audio/mpeg"/>
+</audio>
+
+<audio id="FraseDis">
+  <source id="SourceDis" scr="Educado1.mp3" type="audio/mpeg"/>
+</audio>
+
+<audio id="rapaz">
+  <source src="xaropinho-ratinho-rapaz.mp3" type="audio/mpeg"/>
+</audio>
+
+<div class="container2">
+<div class="item2 animationPosition1">
+         <div   class="item2 animationSpinner"><img src="765px-Webysther_20170627_-_Logo_IME-USP_sem_texto.svg.png" height="120px" width="100px"/></div> </div>
+         <div class="item2 animationPosition1">  <div   class="item4 animationSpinner"><img src="pizza-png.png" height="200px" width="200px"/></div> </div>
+         <div class="item2 animationPosition2">  <div   class="item4 animationSpinner1"><img src="pizza-png.png" height="200px" width="200px"/></div> </div>
+</div>
+<p><h1><insira seu texto aqui><h1></p>
+<div class container>
+  <img src="rest.jpg" id="fundo"/>
+  <div class="desaparecer" id="imagens">
+        <img class="sumir" src="feliz.jpg" id="feliz" />
+        <img src="triste.jpg" id="triste" />
+ </div>
+  <div class = "item3">
+    <button onclick="playAudioRespect()" type="button" class="item green transitionBackground"><h1>Respeitar 👉 👈</h1></button>
+    <button onclick="playAudioDisrespect()" type="button" class="item red transitionBackground"><h1>Desrespeitar✊<h1></button>
+    <button onclick="rapaiz()" type="button"class="item yellow transitionBackground"><h1>Rapaz🤨?🇩🇪<h1></button>
+  </div>
+</div>
+<script>
+
+let random;
+
+let respeito = 0;
+
+var FraseRes = document.getElementById("FraseRes");
+var FraseDis = document.getElementById("FraseDis");
+var rapaz = document.getElementById("rapaz");
+
+let feliz = document.getElementById("feliz");
+let triste = document.getElementById("triste");
+
+let fundo = document.getElementById('fundo');
+  random = Math.floor(Math.random() * 4);
+
+function rapaiz(){
+  rapaz.play();
+}
+
+function troca(){
+
+        console.log('oi');
+
+                if(feliz.classList.item(0) == 'sumir') {
+                        feliz.classList.remove('sumir');
+                        triste.classList.add('sumir');
+                }
+                else {
+                        triste.classList.remove('sumir');
+                        feliz.classList.add('sumir');
+                }
+}
+
+function tocar(){
+  FraseRes.play();
+}
+
+
+function playAudioRespect() { 
+  if(respeito == 0) troca();
+  respeito = 1;
+  imagens.classList.remove('desaparecer');
+  fundo.classList.add('desaparecer');
+  setTimeout(() =>  imagens.classList.add('desaparecer') , 3000);
+  setTimeout(() => fundo.classList.remove('desaparecer') , 3000);
+  console.log(FraseRes);  
+  FraseRes.play();
+} 
+
+function playAudioDisrespect() { 
+  FraseDis.play();
+  if(respeito == 1) troca();
+  respeito = 0;
+  imagens.classList.remove('desaparecer');
+  fundo.classList.add('desaparecer');
+  setTimeout(() =>  imagens.classList.add('desaparecer') , 3000);
+  setTimeout(() => fundo.classList.remove('desaparecer') , 3000);
+  console.log(random);
+}
+
+
+</script>
+
+</body>
+</html>
