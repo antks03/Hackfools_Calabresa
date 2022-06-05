@@ -9,13 +9,13 @@
 
 </head>
 <body>
-
+<h1><marquee>Como você pede sua pizza ?</marquee></h1>
 <audio id="FraseRes">
   <source src="Educado1.mp3" type="audio/mpeg"/>
 </audio>
 
 <audio id="FraseDis">
-  <source id="SourceDis" src="Mal_Educado1.mp3" type="audio/mpeg"/>
+  <source src="Mal_educado1.mp3" type="audio/mpeg"/>
 </audio>
 
 <audio id="rapaz">
@@ -59,7 +59,6 @@ let fundo = document.getElementById('fundo');
 
 function rapaiz(){
   rapaz.play();
-  console.log(rapaz)
 }
 
 function troca(){
@@ -82,7 +81,6 @@ function tocar(){
 
 
 function playAudioRespect() { 
-  FraseRes.play();
   if(respeito == 0) troca();
   respeito = 1;
   imagens.classList.remove('desaparecer');
@@ -90,6 +88,7 @@ function playAudioRespect() {
   setTimeout(() =>  imagens.classList.add('desaparecer') , 3000);
   setTimeout(() => fundo.classList.remove('desaparecer') , 3000);
   console.log(FraseRes);  
+  FraseRes.play();
 } 
 
 function playAudioDisrespect() { 
